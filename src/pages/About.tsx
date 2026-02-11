@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
-import peachRoses from "@/assets/images/peach-roses.jpeg";
+import aboutHero from "@/assets/images/about-hero-arrangement.jpg";
 import creamOrchids from "@/assets/images/cream-orchids.jpg";
 import pinkYellow from "@/assets/images/pink-yellow.jpg";
 
@@ -24,9 +24,9 @@ const About = () => (
           </p>
         </div>
         <img
-          src={peachRoses}
-          alt="Peach and coral rose arrangement by LATEP"
-          className="w-full h-[300px] md:h-[500px] object-cover"
+          src={aboutHero}
+          alt="Burgundy and blush floral arrangement with trailing greenery by LATEP"
+          className="w-full h-[300px] md:h-[500px] object-contain"
         />
       </div>
     </section>
