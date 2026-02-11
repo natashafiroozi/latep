@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
-import latepLogo from "@/assets/latep-logo-lavender.png";
 import pinkYellow from "@/assets/images/pink-yellow.jpg";
 import orchidGreen from "@/assets/images/orchid-green.jpg";
 import blueHydrangea from "@/assets/images/blue-hydrangea.jpg";
+import creamOrchids from "@/assets/images/cream-orchids.jpg";
 
 const services = [
   { title: "Custom Orders", desc: "Bespoke arrangements crafted with seasonal blooms, tailored to your vision." },
@@ -15,34 +15,48 @@ const services = [
 
 const Index = () => (
   <Layout>
-    {/* Hero */}
-    <section className="flex flex-col items-center justify-center min-h-[85vh] px-6 text-center">
-      <img src={latepLogo} alt="LATEP Floral Studio" className="w-64 md:w-80 mb-10" />
-      <p className="max-w-xl text-lg md:text-xl font-light leading-relaxed text-muted-foreground tracking-wide">
-        Los Angeles–based floral studio specializing in elevated, custom arrangements.
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4 mt-12">
-        <Link
-          to="/order"
-          className="px-8 py-3 bg-primary text-primary-foreground text-sm tracking-[0.15em] uppercase font-light hover:opacity-90 transition-opacity"
-        >
-          Start Your Order
-        </Link>
-        <Link
-          to="/event-inquiry"
-          className="px-8 py-3 border border-border text-foreground text-sm tracking-[0.15em] uppercase font-light hover:bg-muted transition-colors"
-        >
-          Plan an Event
-        </Link>
+    {/* Hero — Editorial Split */}
+    <section className="grid md:grid-cols-2 min-h-[100vh] -mt-20">
+      {/* Left — Full-bleed image */}
+      <div className="relative min-h-[50vh] md:min-h-full">
+        <img
+          src={creamOrchids}
+          alt="LATEP floral arrangement"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Right — Brand & navigation */}
+      <div className="flex flex-col items-center justify-center px-8 md:px-16 py-20 md:py-0 relative">
+        <h1 className="font-display text-[clamp(4rem,10vw,9rem)] font-light tracking-[0.08em] leading-[0.9] text-foreground">
+          LATEP
+        </h1>
+        <p className="mt-8 max-w-sm text-center text-sm md:text-base font-light leading-relaxed text-muted-foreground tracking-wide">
+          Los Angeles–based floral studio specializing in elevated, custom arrangements.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 mt-12">
+          <Link
+            to="/order"
+            className="px-8 py-3 border border-foreground text-foreground text-xs tracking-[0.2em] uppercase font-light hover:bg-foreground hover:text-background transition-all duration-300"
+          >
+            Order Flowers
+          </Link>
+          <Link
+            to="/event-inquiry"
+            className="px-8 py-3 text-muted-foreground text-xs tracking-[0.2em] uppercase font-light hover:text-foreground transition-colors duration-300"
+          >
+            Plan an Event
+          </Link>
+        </div>
       </div>
     </section>
 
-    {/* Featured Image */}
-    <section className="px-6 md:px-12 max-w-7xl mx-auto mb-24">
-      <div className="grid md:grid-cols-3 gap-4">
-        <img src={pinkYellow} alt="Pink and yellow arrangement" className="w-full h-80 object-cover" />
-        <img src={orchidGreen} alt="Orchid and green arrangement" className="w-full h-80 object-cover" />
-        <img src={blueHydrangea} alt="Blue hydrangea arrangement" className="w-full h-80 object-cover" />
+    {/* Image Triptych */}
+    <section className="px-6 md:px-12 max-w-7xl mx-auto py-24">
+      <div className="grid md:grid-cols-3 gap-1">
+        <img src={pinkYellow} alt="Pink and yellow arrangement" className="w-full h-[28rem] object-cover" />
+        <img src={orchidGreen} alt="Orchid and green arrangement" className="w-full h-[28rem] object-cover" />
+        <img src={blueHydrangea} alt="Blue hydrangea arrangement" className="w-full h-[28rem] object-cover" />
       </div>
     </section>
 
