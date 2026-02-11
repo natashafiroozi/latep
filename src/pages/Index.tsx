@@ -7,11 +7,13 @@ import blueHydrangea from "@/assets/images/blue-hydrangea.jpg";
 import creamOrchids from "@/assets/images/cream-orchids.jpg";
 import peachRoses from "@/assets/images/peach-roses.jpeg";
 import trailingGreen from "@/assets/images/trailing-green.jpg";
+import eventInstallations from "@/assets/images/event-installations.jpg";
+import eventTablescapeGarden from "@/assets/images/event-tablescape-garden.jpg";
 
 const services = [
   { title: "Custom Orders", desc: "Bespoke arrangements crafted with seasonal blooms, tailored to your vision.", image: peachRoses },
-  { title: "Events", desc: "Full-service event florals for weddings, dinners, and celebrations.", image: orchidGreen },
-  { title: "Installations", desc: "Large-scale floral installations for spaces that demand presence.", image: blueHydrangea },
+  { title: "Events", desc: "Full-service event florals for weddings, dinners, and celebrations.", image: eventTablescapeGarden },
+  { title: "Installations", desc: "Large-scale floral installations for spaces that demand presence.", image: eventInstallations },
   { title: "House & Corporate Accounts", desc: "Recurring arrangements for homes and offices.", image: trailingGreen },
   { title: "Editorial Styling", desc: "Floral direction for photoshoots, campaigns, and editorial projects.", image: pinkYellow },
 ];
