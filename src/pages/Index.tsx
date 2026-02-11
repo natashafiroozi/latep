@@ -1,19 +1,25 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import pinkYellow from "@/assets/images/pink-yellow.jpg";
 import orchidGreen from "@/assets/images/orchid-green.jpg";
 import blueHydrangea from "@/assets/images/blue-hydrangea.jpg";
 import creamOrchids from "@/assets/images/cream-orchids.jpg";
+import peachRoses from "@/assets/images/peach-roses.jpeg";
+import trailingGreen from "@/assets/images/trailing-green.jpg";
 
 const services = [
-  { title: "Custom Orders", desc: "Bespoke arrangements crafted with seasonal blooms, tailored to your vision." },
-  { title: "Events", desc: "Full-service event florals for weddings, dinners, and celebrations." },
-  { title: "Installations", desc: "Large-scale floral installations for spaces that demand presence." },
-  { title: "House & Corporate Accounts", desc: "Recurring arrangements for homes and offices." },
-  { title: "Editorial Styling", desc: "Floral direction for photoshoots, campaigns, and editorial projects." },
+  { title: "Custom Orders", desc: "Bespoke arrangements crafted with seasonal blooms, tailored to your vision.", image: peachRoses },
+  { title: "Events", desc: "Full-service event florals for weddings, dinners, and celebrations.", image: orchidGreen },
+  { title: "Installations", desc: "Large-scale floral installations for spaces that demand presence.", image: blueHydrangea },
+  { title: "House & Corporate Accounts", desc: "Recurring arrangements for homes and offices.", image: trailingGreen },
+  { title: "Editorial Styling", desc: "Floral direction for photoshoots, campaigns, and editorial projects.", image: pinkYellow },
 ];
 
-const Index = () => (
+const Index = () => {
+  const [hoveredService, setHoveredService] = useState<number | null>(null);
+
+  return (
   <Layout>
     {/* Hero — Editorial Split */}
     <section className="grid md:grid-cols-2 min-h-[100vh] -mt-20">
@@ -60,18 +66,47 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Services */}
-    <section className="px-6 md:px-12 max-w-5xl mx-auto mb-32">
-      <h2 className="text-3xl md:text-4xl font-display font-light text-center mb-16 tracking-wide">
+    {/* Services — Interactive Hover Reveals */}
+    <section className="px-6 md:px-12 max-w-6xl mx-auto mb-32">
+      <h2 className="text-3xl md:text-5xl font-display font-light text-center mb-20 tracking-wide">
         Our Services
       </h2>
-      <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
-        {services.map((s) => (
-          <div key={s.title} className="border-t border-border pt-6">
-            <h3 className="text-lg font-display font-normal mb-2">{s.title}</h3>
-            <p className="text-sm text-muted-foreground font-light leading-relaxed">{s.desc}</p>
-          </div>
-        ))}
+      <div className="relative">
+        {/* Hover image reveal */}
+        <div
+          className="hidden md:block fixed top-1/2 right-[8%] -translate-y-1/2 w-[320px] h-[420px] overflow-hidden pointer-events-none z-10 transition-opacity duration-500"
+          style={{ opacity: hoveredService !== null ? 1 : 0 }}
+        >
+          {services.map((s, i) => (
+            <img
+              key={s.title}
+              src={s.image}
+              alt={s.title}
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+              style={{ opacity: hoveredService === i ? 1 : 0 }}
+            />
+          ))}
+        </div>
+
+        {/* Service list */}
+        <div className="md:max-w-[55%] space-y-0">
+          {services.map((s, i) => (
+            <div
+              key={s.title}
+              className="group border-t border-border py-8 md:py-10 cursor-default transition-all duration-300"
+              onMouseEnter={() => setHoveredService(i)}
+              onMouseLeave={() => setHoveredService(null)}
+            >
+              <h3 className="text-xl md:text-2xl font-display font-normal mb-3 transition-colors duration-300 group-hover:text-primary">
+                {s.title}
+              </h3>
+              <p className="text-sm text-muted-foreground font-light leading-relaxed max-w-md transition-all duration-500 md:max-h-0 md:opacity-0 md:group-hover:max-h-20 md:group-hover:opacity-100 overflow-hidden">
+                {s.desc}
+              </p>
+            </div>
+          ))}
+          <div className="border-t border-border" />
+        </div>
       </div>
     </section>
 
@@ -88,6 +123,7 @@ const Index = () => (
       </div>
     </section>
   </Layout>
-);
+  );
+};
 
 export default Index;
