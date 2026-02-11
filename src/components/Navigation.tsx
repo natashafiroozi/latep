@@ -18,7 +18,7 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center">
-          <img src={latepLogo} alt="LATEP" className="h-8 md:h-10" />
+          <img src={latepLogo} alt="LATEP" className="h-8 md:h-10 opacity-80" style={{ filter: 'hue-rotate(40deg) saturate(0.6) brightness(0.9)' }} />
         </Link>
 
         {/* Desktop nav */}
