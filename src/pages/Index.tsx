@@ -84,7 +84,7 @@ const Index = () => {
               key={s.title}
               src={s.image}
               alt={s.title}
-              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+              className="absolute inset-0 w-full h-full object-contain transition-opacity duration-500"
               style={{ opacity: hoveredService === i ? 1 : 0 }}
             />
           ))}
@@ -109,7 +109,7 @@ const Index = () => {
               <img
                 src={s.image}
                 alt={s.title}
-                className="md:hidden w-full h-48 object-cover mt-4"
+                className="md:hidden w-full h-auto object-contain mt-4"
               />
             </div>
           ))}
