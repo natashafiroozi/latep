@@ -26,7 +26,7 @@ const About = () => (
         <img
           src={aboutHero}
           alt="Burgundy and blush floral arrangement with trailing greenery by LATEP"
-          className="w-full h-[300px] md:h-[500px] object-contain"
+          className="w-full h-[350px] md:h-[520px] object-cover object-center"
         />
       </div>
     </section>
