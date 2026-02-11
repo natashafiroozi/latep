@@ -53,19 +53,19 @@ const EventInquiry = () => {
               </a>
             </p>
             {/* Editorial staggered image grid */}
-            <div className="grid grid-cols-12 gap-3">
-              <div className="col-span-7">
+            <div className="grid grid-cols-1 sm:grid-cols-12 gap-3">
+              <div className="sm:col-span-7">
                 <img
                   src={eventTablescape}
                   alt="Garden dinner tablescape with pink peonies by LATEP"
-                  className="w-full h-[320px] md:h-[400px] object-cover"
+                  className="w-full h-[240px] sm:h-[320px] md:h-[400px] object-cover"
                 />
               </div>
-              <div className="col-span-5 pt-8">
+              <div className="sm:col-span-5 sm:pt-8">
                 <img
                   src={eventHydrangeas}
                   alt="Blue and purple hydrangea table arrangement by LATEP"
-                  className="w-full h-[280px] md:h-[360px] object-cover"
+                  className="w-full h-[240px] sm:h-[280px] md:h-[360px] object-cover"
                 />
               </div>
             </div>

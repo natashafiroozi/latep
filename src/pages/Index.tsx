@@ -60,11 +60,11 @@ const Index = () => {
     </section>
 
     {/* Image Triptych */}
-    <section className="px-6 md:px-12 max-w-7xl mx-auto py-24">
-      <div className="grid md:grid-cols-3 gap-1">
-        <img src={pinkYellow} alt="Pink and yellow arrangement" className="w-full h-[28rem] object-cover" />
-        <img src={orchidGreen} alt="Orchid and green arrangement" className="w-full h-[28rem] object-cover" />
-        <img src={blueHydrangea} alt="Blue hydrangea arrangement" className="w-full h-[28rem] object-cover" />
+    <section className="px-6 md:px-12 max-w-7xl mx-auto py-16 md:py-24">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
+        <img src={pinkYellow} alt="Pink and yellow arrangement" className="w-full h-[16rem] md:h-[28rem] object-cover" />
+        <img src={orchidGreen} alt="Orchid and green arrangement" className="w-full h-[16rem] md:h-[28rem] object-cover" />
+        <img src={blueHydrangea} alt="Blue hydrangea arrangement" className="w-full h-[16rem] md:h-[28rem] object-cover" />
       </div>
     </section>
 
@@ -105,6 +105,12 @@ const Index = () => {
               <p className="text-sm text-muted-foreground font-light leading-relaxed max-w-md transition-all duration-500 md:max-h-0 md:opacity-0 md:group-hover:max-h-20 md:group-hover:opacity-100 overflow-hidden">
                 {s.desc}
               </p>
+              {/* Mobile-only image */}
+              <img
+                src={s.image}
+                alt={s.title}
+                className="md:hidden w-full h-48 object-cover mt-4"
+              />
             </div>
           ))}
           <div className="border-t border-border" />
