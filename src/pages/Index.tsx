@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import pinkYellow from "@/assets/images/pink-yellow.jpg";
 import orchidGreen from "@/assets/images/orchid-green.jpg";
@@ -60,16 +61,28 @@ const Index = () => {
     </section>
 
     {/* Image Triptych */}
-    <section className="px-6 md:px-12 max-w-7xl mx-auto py-16 md:py-24">
+    <motion.section 
+      className="px-6 md:px-12 max-w-7xl mx-auto py-16 md:py-24"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
         <img src={pinkYellow} alt="Pink and yellow arrangement" className="w-full h-[16rem] md:h-[28rem] object-cover" />
         <img src={orchidGreen} alt="Orchid and green arrangement" className="w-full h-[16rem] md:h-[28rem] object-cover" />
         <img src={blueHydrangea} alt="Blue hydrangea arrangement" className="w-full h-[16rem] md:h-[28rem] object-cover" />
       </div>
-    </section>
+    </motion.section>
 
     {/* Services — Interactive Hover Reveals */}
-    <section className="px-6 md:px-12 max-w-6xl mx-auto mb-32">
+    <motion.section 
+      className="px-6 md:px-12 max-w-6xl mx-auto mb-32"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       <h2 className="text-3xl md:text-5xl font-display font-light text-center mb-20 tracking-wide">
         Our Services
       </h2>
@@ -116,10 +129,16 @@ const Index = () => {
           <div className="border-t border-border" />
         </div>
       </div>
-    </section>
+    </motion.section>
 
     {/* Brand Statement */}
-    <section className="bg-primary/20 py-24 px-6 md:px-12 mb-0">
+    <motion.section 
+      className="bg-primary/20 py-24 px-6 md:px-12 mb-0"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       <div className="max-w-3xl mx-auto text-center">
         <blockquote className="text-2xl md:text-3xl font-display font-light italic leading-relaxed text-foreground">
           "Every arrangement is an exercise in seasonality, texture, and feeling — 
@@ -129,7 +148,7 @@ const Index = () => {
           — Natasha Firoozi, Founder
         </p>
       </div>
-    </section>
+    </motion.section>
   </Layout>
   );
 };
