@@ -26,7 +26,7 @@ const About = () => (
         <img
           src={peachRoses}
           alt="Peach and coral rose arrangement by LATEP"
-          className="w-full h-[500px] object-cover"
+          className="w-full h-[300px] md:h-[500px] object-cover"
         />
       </div>
     </section>
