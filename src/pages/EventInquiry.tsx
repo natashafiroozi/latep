@@ -10,7 +10,8 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { CalendarIcon, Check } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
-import trailingGreen from "@/assets/images/trailing-green.jpg";
+import eventHydrangeas from "@/assets/images/event-hydrangeas.jpg";
+import eventTablescape from "@/assets/images/event-tablescape.jpg";
 
 const budgetOptions = ["$1,000 – $2,500", "$2,500 – $5,000", "$5,000 – $10,000", "$10,000+"];
 
@@ -32,7 +33,7 @@ const EventInquiry = () => {
     <Layout>
       <section className="min-h-[calc(100vh-5rem)] px-6 md:px-12 max-w-7xl mx-auto pt-16 md:pt-24 pb-24">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24">
-          {/* Left — Info */}
+          {/* Left — Info + Images */}
           <div>
             <h1 className="text-4xl md:text-5xl font-display font-light mb-8 tracking-wide">
               Events & Installations
@@ -51,11 +52,23 @@ const EventInquiry = () => {
                 natasha@latep.co
               </a>
             </p>
-            <img
-              src={trailingGreen}
-              alt="Trailing green floral installation by LATEP"
-              className="w-full h-80 object-cover"
-            />
+            {/* Editorial staggered image grid */}
+            <div className="grid grid-cols-12 gap-3">
+              <div className="col-span-7">
+                <img
+                  src={eventTablescape}
+                  alt="Garden dinner tablescape with pink peonies by LATEP"
+                  className="w-full h-[320px] md:h-[400px] object-cover"
+                />
+              </div>
+              <div className="col-span-5 pt-8">
+                <img
+                  src={eventHydrangeas}
+                  alt="Blue and purple hydrangea table arrangement by LATEP"
+                  className="w-full h-[280px] md:h-[360px] object-cover"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Right — Form */}
