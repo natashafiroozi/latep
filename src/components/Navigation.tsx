@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import latepLogo from "@/assets/latep-logo-lockup.png";
+import latepLogo from "@/assets/latep-logo-olive.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
