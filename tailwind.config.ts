@@ -12,6 +12,10 @@ export default {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      body: ['Inter', 'sans-serif'],
+      display: ['Cormorant Garamond', 'serif'],
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
