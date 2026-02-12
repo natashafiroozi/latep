@@ -26,7 +26,7 @@ const About = () => (
         <img
           src={aboutHero}
           alt="Burgundy and blush floral arrangement with trailing greenery by LATEP"
-          className="w-full h-[350px] md:h-[520px] object-cover object-center"
+          className="w-full h-[350px] md:h-[520px] object-cover object-center floral-soft-edge"
         />
       </div>
     </section>
@@ -51,8 +51,8 @@ const About = () => (
     {/* Gallery strip */}
     <section className="px-6 md:px-12 max-w-7xl mx-auto mb-24">
       <div className="grid md:grid-cols-2 gap-4">
-        <img src={creamOrchids} alt="Cream orchid and hydrangea arrangement" className="w-full h-96 object-cover" />
-        <img src={pinkYellow} alt="Vibrant pink and yellow arrangement" className="w-full h-96 object-cover" />
+        <img src={creamOrchids} alt="Cream orchid and hydrangea arrangement" className="w-full h-96 object-cover floral-soft-edge" />
+        <img src={pinkYellow} alt="Vibrant pink and yellow arrangement" className="w-full h-96 object-cover floral-soft-edge" />
       </div>
     </section>
 

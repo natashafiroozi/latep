@@ -69,9 +69,9 @@ const Index = () => {
       viewport={{ once: true, margin: "-100px" }}
     >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
-        <img src={pinkYellow} alt="Pink and yellow arrangement" className="w-full h-[16rem] md:h-[28rem] object-cover" />
-        <img src={orchidGreen} alt="Orchid and green arrangement" className="w-full h-[16rem] md:h-[28rem] object-cover" />
-        <img src={blueHydrangea} alt="Blue hydrangea arrangement" className="w-full h-[16rem] md:h-[28rem] object-cover" />
+        <img src={pinkYellow} alt="Pink and yellow arrangement" className="w-full h-[16rem] md:h-[28rem] object-cover floral-soft-edge" />
+        <img src={orchidGreen} alt="Orchid and green arrangement" className="w-full h-[16rem] md:h-[28rem] object-cover floral-soft-edge" />
+        <img src={blueHydrangea} alt="Blue hydrangea arrangement" className="w-full h-[16rem] md:h-[28rem] object-cover floral-soft-edge" />
       </div>
     </motion.section>
 
@@ -97,7 +97,7 @@ const Index = () => {
               key={s.title}
               src={s.image}
               alt={s.title}
-              className="absolute inset-0 w-full h-full object-contain transition-opacity duration-500"
+              className="absolute inset-0 w-full h-full object-contain transition-opacity duration-500 floral-soft-edge"
               style={{ opacity: hoveredService === i ? 1 : 0 }}
             />
           ))}
@@ -122,7 +122,7 @@ const Index = () => {
               <img
                 src={s.image}
                 alt={s.title}
-                className="md:hidden w-full h-auto object-contain mt-4"
+                className="md:hidden w-full h-auto object-contain mt-4 floral-soft-edge"
               />
             </div>
           ))}
