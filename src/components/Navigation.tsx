@@ -15,7 +15,7 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
+      <div className="w-full px-6 md:px-12 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center">
           <span className="font-display text-xl md:text-2xl tracking-[0.25em] font-light text-foreground">LATEP</span>
         </Link>
