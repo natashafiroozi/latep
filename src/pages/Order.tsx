@@ -44,7 +44,7 @@ const Order = () => {
             </p>
             <p className="text-base font-light leading-relaxed text-muted-foreground mb-10">
               Tell us what you're envisioning — the occasion, the colors, the mood — and we'll craft 
-              something beautiful. Natasha will personally review every order and respond within 48 hours.
+              something beautiful. We will review every order and respond within 24 hours.
             </p>
             <img
               src={burgundyDried}
