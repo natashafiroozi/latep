@@ -7,11 +7,20 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { CalendarIcon, Check } from "lucide-react";
+import { CalendarIcon, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
-import eventHydrangeas from "@/assets/images/event-hydrangeas.jpg";
-import eventTablescape from "@/assets/images/event-tablescape.jpg";
+import eventHydrangeasBlue from "@/assets/images/event-hydrangeas-blue.jpg";
+import eventTablescapePink from "@/assets/images/event-tablescape-pink.jpg";
+import eventCenterpieceLong from "@/assets/images/event-centerpiece-long.jpg";
+import eventCenterpieceClose from "@/assets/images/event-centerpiece-close.jpg";
+
+const eventImages = [
+  { src: eventHydrangeasBlue, alt: "Blue and purple hydrangea table arrangement by LATEP" },
+  { src: eventTablescapePink, alt: "Pink peony garden dinner tablescape by LATEP" },
+  { src: eventCenterpieceLong, alt: "Long table centerpiece with pink dogwood flowers by LATEP" },
+  { src: eventCenterpieceClose, alt: "Close-up of pink dogwood and peony centerpiece by LATEP" },
+];
 
 const budgetOptions = ["$1,000 – $2,500", "$2,500 – $5,000", "$5,000 – $10,000", "$10,000+"];
 
@@ -19,6 +28,10 @@ const EventInquiry = () => {
   const [submitted, setSubmitted] = useState(false);
   const [date, setDate] = useState<Date>();
   const [loading, setLoading] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const nextImage = () => setCurrentImage((prev) => (prev + 1) % eventImages.length);
+  const prevImage = () => setCurrentImage((prev) => (prev - 1 + eventImages.length) % eventImages.length);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -52,21 +65,39 @@ const EventInquiry = () => {
                 natasha@latep.co
               </a>
             </p>
-            {/* Editorial staggered image grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-12 gap-3">
-              <div className="sm:col-span-7">
-                <img
-                  src={eventTablescape}
-                  alt="Garden dinner tablescape with pink peonies by LATEP"
-                  className="w-full h-[240px] sm:h-[320px] md:h-[400px] object-cover"
-                />
-              </div>
-              <div className="sm:col-span-5 sm:pt-8">
-                <img
-                  src={eventHydrangeas}
-                  alt="Blue and purple hydrangea table arrangement by LATEP"
-                  className="w-full h-[240px] sm:h-[280px] md:h-[360px] object-cover"
-                />
+            {/* Photo carousel — one at a time */}
+            <div className="relative group">
+              <img
+                src={eventImages[currentImage].src}
+                alt={eventImages[currentImage].alt}
+                className="w-full h-[300px] sm:h-[400px] md:h-[480px] object-cover transition-opacity duration-500"
+              />
+              <button
+                onClick={prevImage}
+                aria-label="Previous photo"
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-background/70 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={nextImage}
+                aria-label="Next photo"
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-background/70 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                <ChevronRight size={20} />
+              </button>
+              <div className="flex justify-center gap-2 mt-4">
+                {eventImages.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentImage(i)}
+                    className={cn(
+                      "w-2 h-2 rounded-full transition-colors",
+                      i === currentImage ? "bg-foreground" : "bg-foreground/25"
+                    )}
+                    aria-label={`View photo ${i + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
