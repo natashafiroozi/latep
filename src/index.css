@@ -62,3 +62,8 @@
     @apply font-display;
   }
 }
+
+.floral-soft-edge {
+  mask-image: radial-gradient(ellipse 92% 88% at center, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 92% 88% at center, black 60%, transparent 100%);
+}
