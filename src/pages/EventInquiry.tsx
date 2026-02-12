@@ -44,8 +44,8 @@ const EventInquiry = () => {
 
   return (
     <Layout>
-      <section className="min-h-[calc(100vh-5rem)] px-6 md:px-12 max-w-7xl mx-auto pt-16 md:pt-24 pb-24">
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24">
+       <section className="min-h-[calc(100vh-5rem)] px-6 md:px-12 max-w-7xl mx-auto pt-16 md:pt-24 pb-24">
+         <div className="grid md:grid-cols-2 gap-16 lg:gap-32">
           {/* Left — Info + Images */}
           <div>
             <h1 className="text-4xl md:text-5xl font-display font-light mb-8 tracking-wide">
