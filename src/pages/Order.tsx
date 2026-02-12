@@ -49,7 +49,7 @@ const Order = () => {
             <img
               src={customOrderArrangement}
               alt="Custom blue hydrangea, white peony, and trailing greenery floral arrangement by LATEP"
-              className="w-full h-auto object-contain floral-soft-edge"
+              className="w-full h-auto object-contain"
             />
           </div>
 

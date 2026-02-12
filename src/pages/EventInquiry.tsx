@@ -70,7 +70,7 @@ const EventInquiry = () => {
               <img
                 src={eventImages[currentImage].src}
                 alt={eventImages[currentImage].alt}
-                className="w-full h-[300px] sm:h-[400px] md:h-[480px] object-cover transition-opacity duration-500 floral-soft-edge"
+                className="w-full h-[300px] sm:h-[400px] md:h-[480px] object-cover transition-opacity duration-500"
               />
               <button
                 onClick={prevImage}
