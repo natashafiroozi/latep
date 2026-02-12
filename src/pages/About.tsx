@@ -1,8 +1,6 @@
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
 import aboutHero from "@/assets/images/about-hero-arrangement.jpg";
-import creamOrchids from "@/assets/images/cream-orchids.jpg";
-import pinkYellow from "@/assets/images/pink-yellow.jpg";
 
 const About = () => (
   <Layout>
@@ -48,13 +46,6 @@ const About = () => (
       </div>
     </section>
 
-    {/* Gallery strip */}
-    <section className="px-6 md:px-12 max-w-7xl mx-auto mb-24">
-      <div className="grid md:grid-cols-2 gap-4">
-        <img src={creamOrchids} alt="Cream orchid and hydrangea arrangement" className="w-full h-96 object-cover" />
-        <img src={pinkYellow} alt="Vibrant pink and yellow arrangement" className="w-full h-96 object-cover" />
-      </div>
-    </section>
 
     {/* CTA */}
     <section className="text-center py-20 px-6">
