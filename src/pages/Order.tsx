@@ -10,7 +10,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { CalendarIcon, Check } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
-import burgundyDried from "@/assets/images/burgundy-dried.jpeg";
+import customOrderArrangement from "@/assets/images/custom-order-arrangement.jpg";
 
 const budgetOptions = ["$200 – $400", "$400 – $600", "$600 – $1,000", "$1,000+"];
 
@@ -47,9 +47,9 @@ const Order = () => {
               something beautiful. We will review every order and respond within 24 hours.
             </p>
             <img
-              src={burgundyDried}
-              alt="Burgundy dried flower arrangement by LATEP"
-              className="w-full h-80 object-cover"
+              src={customOrderArrangement}
+              alt="Custom blue hydrangea, white peony, and trailing greenery floral arrangement by LATEP"
+              className="w-full h-auto object-contain"
             />
           </div>
 
